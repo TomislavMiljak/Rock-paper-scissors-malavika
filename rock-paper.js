@@ -31,7 +31,7 @@ function getPlayerSelection() {
         playerSelection = prompt("Enter Rock, Paper, or Scissors to play or press Cancel to quit:");
         if (playerSelection === null) {
             alert("Thanks for playing! Goodbye!");
-            return null; // Exit the game if the user presses "Cancel"
+            return null; 
         }
         if (!choices.includes(playerSelection.toLowerCase().trim())) {
             alert("Invalid choice! Please enter Rock, Paper, or Scissors.");
@@ -61,7 +61,7 @@ function game() {
         for (let i = 0; i < 5; i++) {
             const playerSelection = getPlayerSelection();
             if (playerSelection === null) {
-                return; // Exit the game if the user presses "Cancel"
+                return; 
             }
             const computerSelection = computerPlay();
             const result = playRound(playerSelection, computerSelection);
@@ -72,9 +72,9 @@ function game() {
             }
             alert(`Round ${i + 1}: ${result} | Current Score - You: ${playerScore}, AI: ${computerScore}`);
         }
-        showFinalMessage(playerScore, computerScore); // Show the final message after all rounds
+        showFinalMessage(playerScore, computerScore); 
 
-        // Ask if the user wants to play another round
+        
         playAgain = confirm("Do you want to play one more game?");
     } while (playAgain);
     alert("Thanks for playing! Goodbye!");
